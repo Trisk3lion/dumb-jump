@@ -1512,12 +1512,12 @@ or most optimal searcher."
     
     ;; cobol
     (:type "variable" :supports ("ag" "grep" "rg" "git-grep") :language "cobol"
-           :regex "^.{6}[^*/]\\s*[[:digit:]]{1,2}\\s+JJJ"
+           :regex "^.{6}[^*/]\\s*([FRS]D|[[:digit:]]{1,2})\\s+JJJ"
            :tests ("       01 VARIABLE" "000350     10 SUB-VAR")
            :not ("      *01 VAR"))
     
     (:type "function" :supports ("ag" "grep" "rg" "git-grep") :language "cobol"
-           :regex "^.{6}[^*/]JJJ(\\s+section)?\\."
+           :regex "^.{6}[^*/]JJJ\\j(\\s+section)?\\."
            :tests ("       500-PROCEDURE." "       ABC-MAIN SECTION.")
            :not "        EXIT."))
 
