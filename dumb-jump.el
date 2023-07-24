@@ -1535,6 +1535,11 @@ or most optimal searcher."
     (:type "function" :supports ("ag" "grep" "rg" "git-grep") :language "cobol"
            :regex "^.{6}[^*/]JJJ(\\s+section)?\\."
            :tests ("       500-PROCEDURE." "       ABC-MAIN SECTION.")
+           :not "        EXIT.")
+
+    (:type "submodule" :supports ("ag" "grep" "rg" "git-grep") :language "cobol"
+           :regex "^.{6}[^*/]program-id\\.\\s*JJJ.*\\."
+           :tests ("       PROGRAM-ID. HFTN610." "       program-id. mfy66.")
            :not "        EXIT."))
 
 
